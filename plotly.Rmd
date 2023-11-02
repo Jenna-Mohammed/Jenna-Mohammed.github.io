@@ -23,7 +23,36 @@ instacart =
 
 instacart = 
   instacart %>% 
-  head(600)
+  head(600) |>
+  select(add_to_cart_order, reordered, user_id, order_number, order_hour_of_day, days_since_prior_order, product_name, aisle_id, product_id, aisle, department)
+  
 ```
 
+### Making a Boxplot
 
+```{r}
+
+instacart |> 
+  plot_ly(y = ~add_to_cart_order, color = ~department, type = "box", colors = "viridis") 
+  
+```
+
+This plot shows the relationship between items added to order and the department they come from
+
+### Making a Scatterplot
+
+```{r}
+#instacart |>
+  
+```
+
+### Making a Barchart
+
+```{r}
+instacart |> 
+  count(aisle) |>
+  mutate(aisle = fct_reorder(aisle, n)) |> 
+  plot_ly(x = ~aisle, y = ~n, color = ~aisle, type = "bar", colors =  "viridis")
+```
+
+This plot shows the items in each aisle compared to the amount of items in each aisle
