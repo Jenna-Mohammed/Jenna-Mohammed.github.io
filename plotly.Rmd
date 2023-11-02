@@ -2,17 +2,17 @@
 title: "Plotly"
 ---
 
-### Problem 2
+# Problem 2
 
 
-```{r}
+```{r, message=FALSE, warning=FALSE}
 library(tidyverse)
 library(plotly)
 library(dplyr)
 library(p8105.datasets)
 ```
 
-Loading data
+### Loading data
 
 ```{r}
 data("instacart")
@@ -37,7 +37,7 @@ instacart |>
   
 ```
 
-This plot shows the relationship between the hour of day when an item is ordered and the department they come from
+This plot shows `order_hour_of_day` against the `department`
 
 ### Making a Scatterplot
 
@@ -61,4 +61,4 @@ instacart |>
   plot_ly(x = ~aisle, y = ~n, color = ~aisle, type = "bar", colors =  "viridis")
 ```
 
-This plot shows the items in each aisle compared to the amount of items in each aisle
+This plot shows the items in `aisle` compared to the amount of items in each aisle. The count function was used to determine the amount of items in each aisle
