@@ -33,18 +33,24 @@ instacart =
 ```{r}
 
 instacart |> 
-  plot_ly(y = ~add_to_cart_order, color = ~department, type = "box", colors = "viridis") 
+  plot_ly(y = ~order_hour_of_day, x = ~department, color = ~department, type = "box", colors = "viridis")
   
 ```
 
-This plot shows the relationship between items added to order and the department they come from
+This plot shows the relationship between the hour of day when an item is ordered and the department they come from
 
 ### Making a Scatterplot
 
 ```{r}
-#instacart |>
+instacart |>
+  mutate(text_label = str_c("Product:", product_name)) |>
+  plot_ly(
+    x = ~product_id, y = ~add_to_cart_order, type = "scatter", mode = "markers",
+   color = ~department, alpha = 0.5, colors = "viridis")
   
 ```
+
+This plot shows `product_id` against `add_to_cart_order`
 
 ### Making a Barchart
 
