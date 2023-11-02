@@ -7,10 +7,11 @@ navbar:
       href: resume.html
     - text: "Plotly"
       href: plotly.html
+    - text: "Dashboard"
+      href: dashboard.html
     - icon: fa-envelope fa-lg
-      href: mailto:<jam2530#cumc.columbia.edu>
+      href: mailto:<jam2530@cumc.columbia.edu>
     - icon: fa-github fa-lg
       href: http://github.com/<Jenna-Mohammed>/
 output:
   html_document:
-  theme: cerulean
